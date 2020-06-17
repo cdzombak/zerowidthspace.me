@@ -1,4 +1,4 @@
 /* CHRIS DZOMBAK */
-    Contact: chris@dzombak.com
-    Twitter: @cdzombak
-    Home: Ann Arbor, MI
+	Web:   https://www.dzombak.com
+	Email: chris@dzombak.com
+	Home:  Ann Arbor, MI
