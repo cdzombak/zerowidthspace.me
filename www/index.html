@@ -3,9 +3,19 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="description" content="A zero width space for you to copy and use.">
-  <meta name="keywords" content="zero width space,unicode,zwsp">
+  <meta name="keywords" content="zero width space,unicode,zwsp,copy zero width space">
   <meta name="author" content="Chris Dzombak">
-  <title>ZWSP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="apple-mobile-web-app-title" content="ZWSP">
+  <meta name="application-name" content="ZWSP">
+  <meta name="msapplication-TileColor" content="#603cba">
+  <meta name="theme-color" content="#ffffff">
+  <title>ZWSP | copy a zero-width space to your clipboard</title>
   <style type="text/css">
     html, body {
       background: #f6f6f6;
@@ -21,12 +31,13 @@
       text-shadow: 0px 1px 0 white;
     }
     pre.zwsp {
-      margin: .5em auto;
+      margin: .5em auto 0 auto;
       color: #333;
       font-size: 3.5em;
     }
     .clipboard-btn {
-      padding: 4px 16px;
+      margin-top: 1em;
+      padding: 12px 24px;
     }
 
     /* https://codepen.io/kipp0/pen/pPNrrj */
@@ -64,8 +75,8 @@
     }
     #toast.show {
       visibility: visible;
-      -webkit-animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
-      animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+      -webkit-animation: fadein 0.25s, expand 0.25s, stay 2s 0.25s, shrink 0.25s 2.25s, fadeout 0.25s 2.25s;
+      animation: fadein 0.25s, expand 0.25s, stay 2s 0.25s, shrink 0.25s 2.25s, fadeout 0.25s 2.25s;
     }
     @-webkit-keyframes fadein {
       from {bottom: 0; opacity: 0;}
@@ -77,41 +88,41 @@
     }
     @-webkit-keyframes expand {
       from {min-width: 50px}
-      to {min-width: 350px}
+      to {min-width: 200px}
     }
     @keyframes expand {
       from {min-width: 50px}
-      to {min-width: 350px}
+      to {min-width: 200px}
     }
     @-webkit-keyframes stay {
-      from {min-width: 350px}
-      to {min-width: 350px}
+      from {min-width: 200px}
+      to {min-width: 200px}
     }
     @keyframes stay {
-      from {min-width: 350px}
-      to {min-width: 350px}
+      from {min-width: 200px}
+      to {min-width: 200px}
     }
     @-webkit-keyframes shrink {
-      from {min-width: 350px;}
+      from {min-width: 200px;}
       to {min-width: 50px;}
     }
     @keyframes shrink {
-      from {min-width: 350px;}
+      from {min-width: 200px;}
       to {min-width: 50px;}
     }
     @-webkit-keyframes fadeout {
       from {bottom: 30px; opacity: 1;}
-      to {bottom: 60px; opacity: 0;}
+      to {bottom: 0px; opacity: 0;}
     }
     @keyframes fadeout {
       from {bottom: 30px; opacity: 1;}
-      to {bottom: 60px; opacity: 0;}
+      to {bottom: 0px; opacity: 0;}
     }
   </style>
 </head>
 <body>
   <pre class="zwsp">&gt;&#8203;&lt;</pre>
-  <p>there is a zero width space between those angle brackets</p>
+  <p>there is a zero width space between those angle brackets.</p>
   <p>
     <button class="clipboard-btn" data-clipboard-text="&#8203;">copy it to my clipboard</button>
   </p>
@@ -125,11 +136,25 @@
         el.className = el.className.replace("show", "");
       }, 2500);
     }
-
     var clipboard = new ClipboardJS('.clipboard-btn');
     clipboard.on('success', function(e) {
       showSuccessToast();
     });
   </script>
+    <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
+    <script>
+    (function(f, a, t, h, o, m){
+      a[h]=a[h]||function(){
+          (a[h].q=a[h].q||[]).push(arguments)
+      };
+      o=f.createElement('script'),
+      m=f.getElementsByTagName('script')[0];
+      o.async=1; o.src=t; o.id='fathom-script';
+      m.parentNode.insertBefore(o,m)
+    })(document, window, '//fathom.cdzombak.net/tracker.js', 'fathom');
+    fathom('set', 'siteId', 'MBYVH');
+    fathom('trackPageview');
+    </script>
+    <!-- / Fathom -->
 </body>
 </html>
