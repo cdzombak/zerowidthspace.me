@@ -1,4 +1,3 @@
 /* CHRIS DZOMBAK */
 	Web:   https://www.dzombak.com
 	Email: chris@dzombak.com
-	Home:  Ann Arbor, MI
