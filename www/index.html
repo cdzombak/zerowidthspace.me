@@ -27,7 +27,7 @@
       text-align: center;
       margin: 0 auto;
       padding: 0.5em 1em;
-      color: #999;
+      color: #6a6a6a;
       text-shadow: 0px 1px 0 white;
     }
     pre.zwsp {
@@ -118,15 +118,49 @@
       from {bottom: 30px; opacity: 1;}
       to {bottom: 0px; opacity: 0;}
     }
+
+    /* Footer styles */
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .content {
+      flex: 1;
+    }
+    footer {
+      border-top: 1px solid #e0e0e0;
+      padding: 1em;
+      text-align: center;
+      color: #999;
+      font-size: 0.9em;
+      display: inline-block;
+      margin: 4em auto 0 auto;
+      padding-top: 0.5em;
+      padding-bottom: 3em;
+    }
+    footer a {
+      color: inherit;
+      text-decoration: underline;
+    }
+    footer a:hover {
+      text-decoration: none;
+    }
   </style>
   <script defer src="https://ua.cdzombak.net/script.js" data-website-id="6f8f9f1e-f3ce-47dd-8468-970f60ca52ae"></script>
 </head>
 <body>
-  <pre class="zwsp">&gt;&#8203;&lt;</pre>
-  <p>there is a zero width space between those angle brackets.</p>
-  <p>
-    <button class="clipboard-btn" data-clipboard-text="&#8203;">copy it to my clipboard</button>
-  </p>
+  <div class="content">
+    <pre class="zwsp">&gt;&#8203;&lt;</pre>
+    <p>there is a zero width space between those angle brackets.</p>
+    <p>
+      <button class="clipboard-btn" data-clipboard-text="&#8203;">copy it to my clipboard</button>
+    </p>
+  </div>
+  <footer>
+    by <a href="https://www.dzombak.com">Chris Dzombak</a> • &copy; <span id="year">2025</span> • <a href="https://www.dzombak.com/support-me">support me</a>
+  </footer>
   <div id="toast"><div id="img">✓</div><div id="desc">copied!</div></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
   <script type="text/javascript">
@@ -141,6 +175,8 @@
     clipboard.on('success', function(e) {
       showSuccessToast();
     });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
