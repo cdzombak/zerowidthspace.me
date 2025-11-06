@@ -26,7 +26,7 @@ jobs:
         env:
           RSYNC_PASSWORD: ${{ secrets.RSYNC_PASSWORD }}
         run: |
-          rsync -avz --delete ./www/ rsync://wwwdeploy@burr.tailnet-003a.ts.net/zerowidthspace.me/
+          rsync -avz --delete ./www/ rsync://wwwdeploy@azul.tailnet-003a.ts.net/zerowidthspace.me/
 
   ntfy:
     name: Ntfy
